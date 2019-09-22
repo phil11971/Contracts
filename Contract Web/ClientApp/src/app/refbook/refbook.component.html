@@ -1,0 +1,25 @@
+<p>
+    <a href="Create">Create New</a>
+  </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Наименование этапа</th>
+        <th>Минимальное количество дней на выполнение этапа</th>
+        <th>Комментарий</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stage of stages">
+        <td>{{ stage.stageName }}</td>
+        <td>{{ stage.minCntDays }}</td>
+        <td>{{ stage.comment }}</td>
+        <td>
+          <a href="Edit">Edit</a> |
+          <a href="Details">Details</a> |
+          <a href="Delete">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,45 @@
+<p>
+  <a href="Create">Create New</a>
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Наименование договора</th>
+      <th>Плановая стоимость</th>
+      <th>Фактическая стоимость</th>
+      <th>Этапы</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contract of contracts">
+      <td>{{ contract.contractName }}</td>
+      <td>{{ contract.planCost }}</td>
+      <td>{{ contract.factCost }}</td>
+      <td>
+        <table>
+          <thead>
+            <tr>
+              <th>Наименование</th>
+              <th>Плановая дата</th>
+              <th>Прогнозная дата</th>
+              <th>Фактическая дата</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let stage of contract.stages">
+              <td>{{ stage.stageName }}</td>
+              <td>{{ stage.planCompletionDate }}</td>
+              <td>{{ stage.projCompletionDate }}</td>
+              <td>{{ stage.factCompletionDate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        <a href="Edit">Edit</a> |
+        <a href="Details">Details</a> |
+        <a href="Delete">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
